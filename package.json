@@ -1,0 +1,26 @@
+{
+  "name": "ip-proxy-helper",
+  "version": "1.0.0",
+  "description": "正向代理请求",
+  "main": "proxy.js",
+  "scripts": {
+    "start": "nodemon proxy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruanjiayou/proxy.git"
+  },
+  "keywords": [
+    "proxy"
+  ],
+  "author": "ruanjiayou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ruanjiayou/proxy/issues"
+  },
+  "homepage": "https://github.com/ruanjiayou/proxy#readme",
+  "dependencies": {
+    "http-proxy": "^1.16.2",
+    "nodemon": "^1.17.3"
+  }
+}
