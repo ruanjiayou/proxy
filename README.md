@@ -8,6 +8,7 @@
 
 ## 安装与运行
 ```
+如果没装全局 nodemon: npm install nodemon -g
 npm install http://github.com/ruanjiayou/proxy.git --save
 进入项目目录(默认转发到localhost)
 nodemon proxy.js 或 npm run start

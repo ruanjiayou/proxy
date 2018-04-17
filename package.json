@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/ruanjiayou/proxy#readme",
   "dependencies": {
-    "http-proxy": "^1.16.2",
-    "nodemon": "^1.17.3"
+    "http-proxy": "^1.16.2"
   }
 }

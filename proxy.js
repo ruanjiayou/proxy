@@ -1,7 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var proxy = require('http-proxy').createProxyServer({});
-var config = {}, ip = 'localhost';
+var config = {}, ip = '192.168.31.106';
 
 var debug = require('debug')('proxy');
 
@@ -12,7 +12,7 @@ var debug = require('debug')('proxy');
     var m;
     while ((m = reg.exec(str)) !== null) {
       config[m[1]] = m[2];
-      console.log('端口:' + m[2] + '\t域名:' + m[1]);
+      console.log(`转发到 ${ip}:${m[2]}\t 请求域名: ${m[1]}`);
     }
   } catch (err) {
     console.log(err.message);
