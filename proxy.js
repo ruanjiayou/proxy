@@ -1,9 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var proxy = require('http-proxy').createProxyServer({});
-var config = {}, ip = '192.168.31.106';
-
-var debug = require('debug')('proxy');
+var config = {}, ip = '127.0.0.1';
 
 (function () {
   try {
@@ -19,11 +17,12 @@ var debug = require('debug')('proxy');
   }
 })();
 
-proxy.on(function (err, req, res) {
-  res.writeHead(500, {
-    'Content-Type': 'text/plain'
-  });
-});
+// proxy.on(function (err, req, res) {
+//   res.writeHead(500, {
+//     'Content-Type': 'text/plain'
+//   });
+// });
+
 proxy.on('error', function (err, req, res) {
   res.writeHead(500, {
     'Content-Type': 'text/plain;charset=utf-8'
@@ -47,5 +46,15 @@ var server = http.createServer(function (req, res) {
   });
   res.end('Welcome to my server!');
 });
-debug('代理服务器正在监听80端口!');
+console.log('代理服务器正在监听80端口!');
 server.listen(80);
+
+// 9.宕机
+process.on('uncaughtException', (err) => {
+  errorLogger.error(`uncaughtException ${err.toString()}`);
+  console.error(err, 'uncaughtException');
+});
+process.on('unhandledRejection', (reason) => {
+  errorLogger.error(`unhandledRejection ${reason.toString()}`);
+  console.error(reason, 'unhandledRejection');
+});
